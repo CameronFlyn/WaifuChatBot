@@ -6,7 +6,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
-import java.util.loggin.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -31,7 +30,7 @@ public class WaifuGUI extends JFrame implements KeyListener {
 			JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 			JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	
-	BufferedImage myPicture = ImageIO.read(new File("C:\Users\Carson\Desktop\Gaming Equality.jpg"));
+	BufferedImage myPicture = ImageIO.read(new File(null, title));
 	JLabel picLabel = new JLabel(new ImageIcon(myPicture));
 
 	static int answers = 0;
