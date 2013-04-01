@@ -2,6 +2,12 @@ package waifu.controller;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.loggin.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import javax.swing.JFrame;
@@ -25,6 +31,9 @@ public class WaifuGUI extends JFrame implements KeyListener {
 			JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 			JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	
+	BufferedImage myPicture = ImageIO.read(new File("C:\Users\Carson\Desktop\Gaming Equality.jpg"));
+	JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+
 	static int answers = 0;
 	
 	public static void main(String[] args) {
@@ -41,8 +50,9 @@ public class WaifuGUI extends JFrame implements KeyListener {
 		input.addKeyListener(this);
 		p.setLayout(new BorderLayout());
 		p.add(menubar, BorderLayout.NORTH);
-		p.add(scroll, BorderLayout.CENTER);
+		p.add(scroll, BorderLayout.EAST);
 		p.add(input, BorderLayout.SOUTH);
+		p.add(picLabel, BorderLayout.WEST);
 		
 		JMenu waitype = new JMenu("Waifu Type");
 		menubar.add(waitype);
